@@ -1,0 +1,13 @@
+{
+    "name": "ZShare",
+    "data": [
+        {
+            "type": "scriptparsetree",
+            "name": "scripts/shield/zshare.gsc",
+            "path": "zshare.gscc",
+            "hooks": [
+                "scripts/zm_common/load.gsc"
+            ]
+        }
+    ]
+}
