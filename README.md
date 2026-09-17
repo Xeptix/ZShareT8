@@ -56,7 +56,8 @@ installer/linux/install.sh
 Each one finds your Black Ops 4 folder and puts the `zshare` folder in
 `project-bo4\mods`, then shows you what it is about to copy and asks once.
 `install.bat -Yes` and `install.sh --yes` copy without asking, `-Uninstall` / `--uninstall`
-removes what an install put there, and `-Find` / `--find` only shows what it detects.
+removes what an install put there, and `-Find` / `--find` only shows what it detects. When it
+can't find your game, `-To <folder>` / `--to <folder>` points it there.
 
 ---
 
@@ -302,6 +303,12 @@ folders, this game's mod folder — with one installer that asks which of them t
 ---
 
 ## Changelog
+
+### v1.1
+
+- **A trade of two identical guns is refused** — "You already have that weapon" — the way
+  Black Ops II has always refused it. Only the same gun both ways; a plain gun for its
+  Pack-a-Punched version still trades.
 
 ### v1.0
 
