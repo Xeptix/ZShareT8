@@ -304,6 +304,11 @@ folders, this game's mod folder — with one installer that asks which of them t
 
 ## Changelog
 
+### v1.2
+
+- **Maps without perk altars are left untouched.** ZShare now leaves the global perk
+  validation callback alone when there is no altar to extend.
+
 ### v1.1
 
 - **A trade of two identical guns is refused** — "You already have that weapon" — the way
