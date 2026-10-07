@@ -6,6 +6,8 @@ by Xep
 
 [**Download the latest release**](https://github.com/Xeptix/ZShareT8/releases/latest)
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F6L1285ROA)
+
 Trade guns with a teammate, hand them points, give away a box hit you don't want, and pay
 for a teammate's perk or spin. All of it from the use button.
 
@@ -28,7 +30,7 @@ Black Ops 4 zombies with [Shield](https://github.com/ellabrella/shield) installe
 mods or dependencies.
 
 **Only the host needs this.** Every part of ZShare runs on the host and reaches everyone
-else as ordinary server-to-client traffic — the prompts, the swap, the box, the altars, the
+else as ordinary server-to-client traffic - the prompts, the swap, the box, the altars, the
 points, the sounds. Players joining your game install nothing.
 
 ---
@@ -89,7 +91,7 @@ crouch and it turns into giving. Nothing else changes about how you play.
 
 What you offer is **the weapon in your hands** when you press. Your teammate can see it
 there; nothing needs naming. What you get back is **whatever they're holding** when they
-accept — so they switch to the gun they want to give before pressing.
+accept - so they switch to the gun they want to give before pressing.
 
 An offer stays open for 10 seconds. It lapses on its own if you switch to your other
 weapon, if the two of you move more than twice the prompt range apart, or if either of you
@@ -102,8 +104,8 @@ from the receiver's own build kit.
 **What can't be traded:** grenades, the knife, shields, mines, equipment, hero weapons and
 gadgets.
 
-**Same gun twice.** A trade that would leave someone holding a gun they already carry — or
-the other half of it, plain against Pack-a-Punched — is refused.
+**Same gun twice.** A trade that would leave someone holding a gun they already carry - or
+the other half of it, plain against Pack-a-Punched - is refused.
 
 ---
 
@@ -112,8 +114,8 @@ the other half of it, plain against Pack-a-Punched — is refused.
 You pay, the weapon rises, and it's yours to take. **Crouch and press use** at the box and
 it's everyone's: the prompt changes for the whole room, and whoever presses use takes it.
 
-Black Ops 4 can already do this on its own — the player the weapon belongs to can press
-**melee** at it — and ZShare's crouched press sets exactly the same thing. Either works,
+Black Ops 4 can already do this on its own - the player the weapon belongs to can press
+**melee** at it - and ZShare's crouched press sets exactly the same thing. Either works,
 and the melee press keeps working whether ZShare is installed or not.
 
 ## Giving points
@@ -126,7 +128,7 @@ gift, a second apart, so three presses is 3000. You need the points to give them
 ## Paying for a teammate
 
 Crouch at a perk altar, or at the box while nobody is using it, and press use to pay the
-price yourself. From then on the next teammate to use it pays nothing — a drink from that
+price yourself. From then on the next teammate to use it pays nothing - a drink from that
 altar, or a spin from the box. Everybody hears about it, and whoever paid is told who used
 it.
 
@@ -135,7 +137,7 @@ the prompt offers your points back.
 
 | When | What happens |
 |---|---|
-| A paid spin turns up the teddy bear | The spin cost nothing, so the game's own refund is nothing — whoever paid gets their points back instead |
+| A paid spin turns up the teddy bear | The spin cost nothing, so the game's own refund is nothing - whoever paid gets their points back instead |
 | The box moves | The paid spin moves with it |
 | A fire sale is on | Nobody can pay at the box while it's cheap |
 | You're playing solo | There's nobody to pay for, so the prompt never appears |
@@ -143,7 +145,7 @@ the prompt offers your points back.
 **A perk altar pours whatever that player's own loadout has in that slot**, which is how
 Black Ops 4 works: the perk your teammate drinks is theirs, not the one you were looking
 at, and its price can differ from the one you paid. A payment here is for *a drink at that
-altar* rather than for a particular perk — what you paid is what your teammate gets towards
+altar* rather than for a particular perk - what you paid is what your teammate gets towards
 it, so a dearer perk costs them the difference and a cheaper one leaves them the change.
 
 Stand up and every machine works exactly as it always has.
@@ -166,10 +168,11 @@ zs_points_amount 500
 ```
 
 The config is re-read every five seconds while the game runs, and again on every press,
-so a change takes effect **almost straight away** — no map restart needed.
+so a change takes effect **almost straight away** - no map restart needed.
 
 | Dvar | Default | What it does |
 |---|---|---|
+| `zs_enabled` | `1` | ZShare itself. Off, the script loads and does nothing else - no prompts, no hooks, no threads. **Read when the match loads**, so it takes on the next one. |
 | `zs_debug` | `0` | Print what the script decides and why, to the Shield log. |
 | `zs_trade` | `1` | Trade weapons with a teammate. |
 | `zs_trade_offer_time` | `10` | Seconds an offer stays open. |
@@ -188,7 +191,7 @@ so a change takes effect **almost straight away** — no map restart needed.
 | `zs_pap_pay` | `1` | The same at the Pack-a-Punch, for the next pack. |
 | `zs_perk_limit` | `0` | How many perks a player can hold. `0` is the game's own limit, a number replaces it, `-1` is no limit. |
 | `zs_show_hint` | `1` | Tell players what the prompts do, once, shortly after they spawn. |
-| `zs_messages` | `1` | The one-line messages — who traded with whom, who shared or paid for what, who gave points. Off leaves the prompts and the sounds. |
+| `zs_messages` | `1` | The one-line messages - who traded with whom, who shared or paid for what, who gave points. Off leaves the prompts and the sounds. |
 | `zs_offer_sound` | `zmb_trap_ready` | Played to the player an offer is made to. `none` = silent. |
 | `zs_trade_sound` | `zmb_powerup_grabbed` | Played to both players when a trade goes through. `none` = silent. |
 | `zs_share_sound` | `zmb_spawn_powerup` | Played to everyone else when a weapon is shared or a machine is paid for. `none` = silent. |
@@ -212,24 +215,27 @@ The same features with the same settings as every other port, allowing for what 
 gives a script:
 
 - **The prompts say the game's own words.** On this engine a prompt can only show one of
-  the game's own lines — a mod cannot write its own, and cannot add one either. So ZShare's
+  the game's own lines - a mod cannot write its own, and cannot add one either. So ZShare's
   prompts borrow the closest thing Black Ops 4 already says, and everything ZShare needs to
   tell you in its own words arrives as a message instead. `docs/porting-t8.md` in the
   project tree has the detail.
 - **There are no chat commands.** Every other port takes `!share`, `!thank` and `!tip` from
   chat; Black Ops 4 hands chat to no script at all. Sharing and thanking are on the prompt
-  here, and **there is no way to tip an arbitrary amount** — a thank sends `zs_thank_amount`
+  here, and **there is no way to tip an arbitrary amount** - a thank sends `zs_thank_amount`
   and the 1000-point gift is the other press.
-- **Thanking and giving points read the same on the prompt.** No stock line says "thank" —
-  all 336 of the game's hint strings were searched — so a thank borrows the same cost line
+- **Thanking and giving points read the same on the prompt.** No stock line says "thank" -
+  all 336 of the game's hint strings were searched - so a thank borrows the same cost line
   a gift uses, and you tell them apart by the number on it: 100 against 1000. The message
   afterwards says which it was.
 - **A shared Pack-a-Punch is taken from the sharer's prompt**, not your own. The part of the
   machine that hands a finished weapon over runs on one player's copy of the prompt, so
   sharing shows you theirs and takes yours out of the way while it lasts. Nothing to do
-  differently — walk up and press use.
+  differently - walk up and press use.
 - **It installs as a mod folder.** Black Ops 4 has no loose-script path, so what ships is a
   compiled script and a manifest for Shield to read.
+- **No settings menu.** Black Ops II and Black Ops III draw their menus in Lua a mod can
+  replace, and ZShare puts its settings on a screen there. Black Ops 4's menus belong to the
+  frontend rather than to a mod's own files, so every setting here is a dvar and nothing else.
 - **`none` silences a sound.** An empty dvar can't be set from in game on this engine.
 
 ---
@@ -241,8 +247,8 @@ the way the revive prompt links to a downed player. This engine can put differen
 one trigger for each viewer and hide it from each viewer separately, so there is one per
 player rather than one per pair as on the other ports.
 
-**A weapon changes hands through the game's own weapon data** — the same structure the
-weapon locker moves — with the gun handed over as the giver's own rather than rebuilt from
+**A weapon changes hands through the game's own weapon data** - the same structure the
+weapon locker moves - with the gun handed over as the giver's own rather than rebuilt from
 the receiver's loadout, which would quietly change the attachments and the camo.
 
 **The box already knows how to be shared, and how to be free.** Sharing sets the two fields
@@ -277,7 +283,7 @@ dump on top of that: every function it calls is a real call a zombies script can
 every entity field, notify, flag, sound alias and localized string it borrows exists there.
 
 Black Ops 4 stores every name as a hash, so the localized strings are checked by hashing
-the name and finding the hash — the same way the project reads the game's hashed names back
+the name and finding the hash - the same way the project reads the game's hashed names back
 into words.
 
 ---
@@ -286,7 +292,7 @@ into words.
 
 | Game | Repo |
 |---|---|
-| Black Ops 4 (T8) | ZShareT8 — you are here |
+| Black Ops 4 (T8) | ZShareT8 - you are here |
 | Black Ops III (T7) | [ZShareT7](https://github.com/Xeptix/ZShareT7) |
 | Black Ops II (T6) | [ZShare](https://github.com/Xeptix/ZShare) |
 | Black Ops (T5) | [ZShareT5](https://github.com/Xeptix/ZShareT5) |
@@ -297,12 +303,39 @@ for what each engine can actually do.
 
 **All five in one download.** The [Treyarch
 Bundle](https://github.com/Xeptix/ZShare/releases/latest) carries every game ZShare runs
-on, laid out as each drops in — the `Plutonium` tree for three of them, Black Ops III's
-folders, this game's mod folder — with one installer that asks which of them to install.
+on, laid out as each drops in - the `Plutonium` tree for three of them, Black Ops III's
+folders, this game's mod folder - with one installer that asks which of them to install.
 
 ---
 
 ## Changelog
+
+### v1.3
+
+- **`zs_enabled`.** ZShare itself, on by default. Off, the script loads, says so to any other
+  mod that asks, and does nothing else: no prompts, no hooks over the stock scripts, no chat
+  words and no threads. Read as the match loads, so a change takes on the next one.
+- **Other mods can find ZShare.** It registers `level.zmods["zshare"]` as it finishes
+  loading -- its version, whether it is switched on, a way to make it re-read its settings,
+  and two perk-limit readers: the limit the map would give on its own, and the one ZShare is
+  actually holding it to. A mod that sets a limit of its own can ask rather than guess, and
+  keep the extra slots a map hands out. Switched off, the descriptor still goes up saying so.
+- **Using the box normally works again.** ZShare passed the box's own code the player where it
+  expects the whole press, so an ordinary press did nothing at all.
+- **Trading keeps the Alternate Ammo Type, the Pack-a-Punch tier and the giver's attachments.**
+  The gun was handed over before its data, so the game merged two copies and rebuilt it from
+  the receiver's build kit.
+- **A Pack-a-Punch payment can only be used once**, and is spent by a pack at any machine on
+  maps that have more than one.
+- **A payment whose payer leaves is cleared**, instead of leaving ten-point packs for the room.
+- **A re-pack is priced as a re-pack**, not at the full 5000.
+- **Paying at the box is off during a fire sale**, since the spin would be taken at full price
+  once the sale ended.
+- **Paying with Shopping Free is refused** rather than spending the elixir on somebody else's
+  turn and leaving a payment worth nothing.
+- **A crouched press at a classic vending machine is left alone.** Only altars ZShare prompts
+  at answer to it.
+- **Prompts on players stay live** after somebody leaves the game.
 
 ### v1.2
 
@@ -311,7 +344,7 @@ folders, this game's mod folder — with one installer that asks which of them t
 
 ### v1.1
 
-- **A trade of two identical guns is refused** — "You already have that weapon" — the way
+- **A trade of two identical guns is refused** - "You already have that weapon" - the way
   Black Ops II has always refused it. Only the same gun both ways; a plain gun for its
   Pack-a-Punched version still trades.
 
@@ -330,5 +363,5 @@ folders, this game's mod folder — with one installer that asks which of them t
 - **Thank a teammate** who paid for you, shared a hit or gave you points: for a while the
   crouched prompt on them offers a small thank. The points come out of your own.
   `zs_thank_amount` and `zs_thank_time` set how much and how long.
-- **`zs_perk_limit`** — how many perks a player can hold, or `-1` for no limit.
+- **`zs_perk_limit`** - how many perks a player can hold, or `-1` for no limit.
 - Every setting is a dvar, re-read while the game runs.
