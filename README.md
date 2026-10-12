@@ -6,7 +6,9 @@ by Xep
 
 [**Download the latest release**](https://github.com/Xeptix/ZShareT8/releases/latest)
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F6L1285ROA)
+[![Support the mod on Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F6L1285ROA)
+[![Support the mod on Patreon](https://img.shields.io/badge/Patreon-Xeptix-F96854?logo=patreon&logoColor=white)](https://www.patreon.com/Xeptix)
+[![Join the Discord](https://img.shields.io/badge/Discord-Join-5865F2?logo=discord&logoColor=white)](https://discord.gg/RE85HRwYZZ)
 
 Trade guns with a teammate, hand them points, give away a box hit you don't want, and pay
 for a teammate's perk or spin. All of it from the use button.
@@ -217,8 +219,7 @@ gives a script:
 - **The prompts say the game's own words.** On this engine a prompt can only show one of
   the game's own lines - a mod cannot write its own, and cannot add one either. So ZShare's
   prompts borrow the closest thing Black Ops 4 already says, and everything ZShare needs to
-  tell you in its own words arrives as a message instead. `docs/porting-t8.md` in the
-  project tree has the detail.
+  tell you in its own words arrives as a message instead.
 - **There are no chat commands.** Every other port takes `!share`, `!thank` and `!tip` from
   chat; Black Ops 4 hands chat to no script at all. Sharing and thanking are on the prompt
   here, and **there is no way to tip an arbitrary amount** - a thank sends `zs_thank_amount`
@@ -309,6 +310,11 @@ folders, this game's mod folder - with one installer that asks which of them to 
 ---
 
 ## Changelog
+
+### v1.4
+
+- **A Discord**, linked at the top of this README beside Ko-fi and Patreon, for questions,
+  bugs and ideas.
 
 ### v1.3
 
