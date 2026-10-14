@@ -311,6 +311,10 @@ folders, this game's mod folder - with one installer that asks which of them to 
 
 ## Changelog
 
+### v1.5
+
+- No change on this game; the version moves with the others so all five stay in step.
+
 ### v1.4
 
 - **A Discord**, linked at the top of this README beside Ko-fi and Patreon, for questions,
